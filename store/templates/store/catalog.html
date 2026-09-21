@@ -1,0 +1,30 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block title %}Каталог — GameStore{% endblock %}
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <div class="eyebrow">Магазин</div>
+        <h1>Каталог игр</h1>
+        <p>Выберите цифровую копию компьютерной игры.</p>
+    </div>
+</section>
+<section class="catalog-section">
+    <div class="container game-grid">
+        {% for game in games %}
+        <article class="game-card">
+            <img src="{% static game.image %}" alt="Обложка {{ game.title }}">
+            <div class="game-card-body">
+                <span class="pill">{{ game.genre }}</span>
+                <h2>{{ game.title }}</h2>
+                <p>{{ game.description }}</p>
+                <div class="game-card-bottom">
+                    <strong>{{ game.price }}</strong>
+                    <button type="button">Купить</button>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

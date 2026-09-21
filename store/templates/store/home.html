@@ -1,0 +1,38 @@
+{% extends 'store/base.html' %}
+{% block title %}Главная — GameStore{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <div class="eyebrow">Цифровые игры для ПК</div>
+            <h1>Новая игра — <span>в пару кликов</span></h1>
+            <p>GameStore — учебный интернет-магазин цифровых копий компьютерных игр. Просматривайте каталог и выбирайте игру по жанру и цене.</p>
+            <div class="hero-actions">
+                <a class="button primary" href="{% url 'store:catalog' %}">Открыть каталог</a>
+                <a class="button ghost" href="{% url 'store:about' %}">О магазине</a>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-tag">Новинка</div>
+            <div class="hero-card-art">GS</div>
+            <h2>Deep Orbit</h2>
+            <p>Космическое приключение</p>
+            <strong>2 499 ₽</strong>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="section-heading">
+            <div class="eyebrow">Преимущества</div>
+            <h2>Простой цифровой магазин</h2>
+        </div>
+        <div class="feature-grid">
+            <article><div class="icon">⚡</div><h3>Быстро</h3><p>Цифровой формат не требует физической доставки.</p></article>
+            <article><div class="icon">🎮</div><h3>Удобно</h3><p>В каталоге собраны игры разных жанров и ценовых категорий.</p></article>
+            <article><div class="icon">🔒</div><h3>Понятно</h3><p>У сайта простая навигация и единое оформление всех страниц.</p></article>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GameStore{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+<body>
+<header class="header">
+    <div class="container header-content">
+        <a class="logo" href="{% url 'store:home' %}">GAME<span>STORE</span></a>
+        <nav class="navigation">
+            <a href="{% url 'store:home' %}">Главная</a>
+            <a href="{% url 'store:catalog' %}">Каталог</a>
+            <a href="{% url 'store:about' %}">О нас</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div>
+            <div class="footer-logo">GAMESTORE</div>
+            <p>Учебный интернет-магазин цифровых копий компьютерных игр.</p>
+        </div>
+        <div class="footer-links">
+            <a href="{% url 'store:home' %}">Главная</a>
+            <a href="{% url 'store:catalog' %}">Каталог</a>
+            <a href="{% url 'store:about' %}">О нас</a>
+        </div>
+    </div>
+    <div class="copyright">© 2026 GameStore. Учебный проект.</div>
+</footer>
+</body>
+</html>
