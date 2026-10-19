@@ -15,11 +15,11 @@
         <article class="game-card">
             <img src="{% static game.image %}" alt="Обложка {{ game.title }}">
             <div class="game-card-body">
-                <span class="pill">{{ game.genre }}</span>
+                <span class="pill">{{ game.genre.name }}</span>
                 <h2>{{ game.title }}</h2>
                 <p>{{ game.description }}</p>
                 <div class="game-card-bottom">
-                    <strong>{{ game.price }}</strong>
+                    <strong>{{ game.price }} ₽</strong>
                     <button type="button">Купить</button>
                 </div>
             </div>

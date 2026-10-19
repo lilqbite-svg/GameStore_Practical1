@@ -25,3 +25,18 @@ py manage.py runserver
 ## Репозиторий
 
 https://github.com/lilqbite-svg/GameStore_Practical1
+
+## Практическая работа №4 «Админ-панель»
+
+В текущий проект добавлены модели «Игры» и «Жанры», управление через Django Admin и русский интерфейс.
+
+```powershell
+py manage.py migrate
+py manage.py seed_gamestore
+py manage.py createsuperuser
+py manage.py runserver
+```
+
+Админ-панель: http://127.0.0.1:8000/admin/ .
+
+`db.sqlite3` и пароли не хранятся в Git. Команда `seed_gamestore` восстанавливает шесть игр и шесть жанров после клонирования. Детали: [отчёт №4](REPORT_PRACTICAL4.md).
