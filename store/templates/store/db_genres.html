@@ -1,0 +1,7 @@
+{% extends 'store/db_page_base.html' %}
+{% block records %}
+<table class="database-table"><thead><tr><th>ID</th><th>Название</th><th>Описание</th><th>Активен</th></tr></thead><tbody>
+{% for item in items %}<tr><td>{{ item.id }}</td><td>{{ item.name }}</td><td>{{ item.description|default:'—' }}</td><td>{{ item.is_active|yesno:'Да,Нет' }}</td></tr>
+{% empty %}<tr><td colspan="4">Записей пока нет.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

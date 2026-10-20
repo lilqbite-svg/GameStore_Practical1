@@ -1,0 +1,7 @@
+{% extends 'store/db_page_base.html' %}
+{% block records %}
+<table class="database-table"><thead><tr><th>ID</th><th>Игра</th><th>Год выпуска</th><th>Платформа</th><th>Возрастной рейтинг</th></tr></thead><tbody>
+{% for item in items %}<tr><td>{{ item.id }}</td><td>{{ item.game.title }}</td><td>{{ item.release_year }}</td><td>{{ item.platform }}</td><td>{{ item.age_rating }}</td></tr>
+{% empty %}<tr><td colspan="5">Записей пока нет.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

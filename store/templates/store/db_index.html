@@ -1,0 +1,12 @@
+{% extends 'store/base.html' %}
+{% block title %}Таблицы базы данных — GameStore{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container"><h1>База данных GameStore</h1><p>Выберите таблицу для просмотра и добавления записей.</p></div></section>
+<section class="database-section"><div class="container database-links">
+  <a href="{% url 'store:database_genres' %}">Жанры</a>
+  <a href="{% url 'store:database_games' %}">Игры</a>
+  <a href="{% url 'store:database_developers' %}">Разработчики</a>
+  <a href="{% url 'store:database_details' %}">Информация об играх</a>
+  <a href="{% url 'store:database_tags' %}">Метки</a>
+</div></section>
+{% endblock %}

@@ -33,3 +33,28 @@ a { color:inherit; }
 @media(max-width:850px){.hero-grid,.about-grid{grid-template-columns:1fr}.game-grid,.feature-grid{grid-template-columns:1fr}.hero h1{font-size:42px}.navigation{gap:2px}.navigation a{padding:8px}.hero-card{transform:none}}
 
 .navigation .admin-nav-link { background: var(--accent); color: white; }
+
+/* Практическая работа №3: страницы базы данных */
+.database-section { padding: 38px 0 75px; }
+.database-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.database-links a { background: var(--panel2); padding: 17px 22px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; font-weight: 700; }
+.database-links a:hover { background: var(--accent); }
+.database-back { margin-bottom: 22px; }
+.database-back a { color: var(--accent2); text-decoration: none; }
+.database-panel { padding: 26px; margin: 0 0 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 15px; }
+.database-panel h2 { font-size: 23px; margin-bottom: 20px; }
+.database-field { margin-bottom: 15px; }
+.database-field label { display: block; margin-bottom: 7px; font-weight: 700; }
+.database-field input:not([type=checkbox]), .database-field textarea, .database-field select { width: min(100%, 650px); padding: 10px 12px; border: 1px solid #464e65; border-radius: 7px; background: var(--panel2); color: var(--text); font: inherit; }
+.database-field input[type=checkbox] { height: 17px; width: 17px; }
+.database-field select[multiple] { min-height: 100px; }
+.database-field small { display: block; margin-top: 4px; color: var(--muted); }
+.database-error { color: #ff8585; margin-top: 5px; }
+.database-success { padding: 12px; background: #153729; color: #aeefc7; border-radius: 8px; margin-bottom: 18px; }
+.database-submit { padding: 12px 24px; background: var(--accent); border: 0; border-radius: 8px; color: #fff; font-weight: 700; cursor: pointer; }
+.database-table-wrap { overflow-x: auto; }
+.database-table { width: 100%; border-collapse: collapse; }
+.database-table th, .database-table td { padding: 11px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+.database-table th { color: var(--accent2); }
+.navigation a.database-nav-link { color: var(--accent2); }
+@media(max-width:800px) { .database-panel { padding: 16px; } .database-table { min-width: 600px; } }

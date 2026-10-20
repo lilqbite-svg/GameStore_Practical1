@@ -1,0 +1,7 @@
+{% extends 'store/db_page_base.html' %}
+{% block records %}
+<table class="database-table"><thead><tr><th>ID</th><th>Название</th><th>Жанр</th><th>Разработчик</th><th>Цена, ₽</th><th>Метки</th><th>В продаже</th></tr></thead><tbody>
+{% for item in items %}<tr><td>{{ item.id }}</td><td>{{ item.title }}</td><td>{{ item.genre.name }}</td><td>{{ item.developer.name|default:'—' }}</td><td>{{ item.price }}</td><td>{% for tag in item.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% empty %}—{% endfor %}</td><td>{{ item.available|yesno:'Да,Нет' }}</td></tr>
+{% empty %}<tr><td colspan="7">Записей пока нет.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'store/base.html' %}
+{% block title %}{{ page_title }} — GameStore{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container"><h1>{{ page_title }}</h1><p>Практическая работа №3: добавление и просмотр записей из базы данных.</p></div></section>
+<section class="database-section"><div class="container">
+  <p class="database-back"><a href="{% url 'store:database_index' %}">← Ко всем таблицам</a></p>
+  {% if messages %}{% for message in messages %}<p class="database-success" role="status">{{ message }}</p>{% endfor %}{% endif %}
+  <div class="database-panel">
+    <h2>Добавить запись</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      {% for field in form %}
+        <div class="database-field">
+          <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
+          {{ field }}
+          {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
+          {% for error in field.errors %}<p class="database-error" role="alert">{{ error }}</p>{% endfor %}
+        </div>
+      {% endfor %}
+      <button class="database-submit" type="submit">Сохранить</button>
+    </form>
+  </div>
+  <div class="database-panel"><h2>Список записей</h2><div class="database-table-wrap">{% block records %}{% endblock %}</div></div>
+</div></section>
+{% endblock %}
